@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/dist/vue.js"></script>
+</head>
+<body>
+ <script>
+    // 响应式数据变化, 数据代理 Object.defineProperty
+     const vm = new Vue({ // vue2 options Api tree-sahking
+        data() {
+          return {name: 'yyf',
+           obj: {
+            name: 1,
+            age: 2
+          },
+          arr: [{a: 1},2] // vue中数组的对象 如果变化了 也需要更新视图
+        }
+        },
+      })
+      vm.obj = {name: 2, age: 2}
+      console.log(vm) // vm._data.age
+      vm.arr.push(123)
+  </script>
+</body>
+</html>
